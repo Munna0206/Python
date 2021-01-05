@@ -39,14 +39,8 @@ def pal(str):
                     size=len(str[i:j])
                 set2.add(str[i:j])
     print("Palindrome:",set2)
-    long(set2,size)
-
-#longest
-def long(set2,size):
-    newlist=[]
-    for i in set2:
-        if(len(i)==size):
-            newlist.append(i)
+    
+    newlist=[i for i in set2 if(len(i)==size)]
     print("\nLongest:",newlist)
 
 #Reverse
@@ -76,7 +70,7 @@ def date_validation(day, month, year):
         max_day_value = 29
     else:
         max_day_value = 28
-    if day < 1 or day > max_day_value:
+    if day in range(1,day > max_day_value+1):
         print("Date is invalid.")
     else:
         print("Valid Date")
